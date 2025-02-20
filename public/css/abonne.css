@@ -1,0 +1,357 @@
+/* Articles table styling */
+.articles-container {
+    background: var(--surface-color);
+    border-radius: 12px;
+    box-shadow: var(--card-shadow);
+    padding: 1.5rem;
+    margin-top: 1.5rem;
+    border: 1px solid var(--border-color);
+    overflow-x: auto; /* Ensure table is scrollable on small screens */
+}
+
+.articles-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 600px; /* Ensure table doesn't break on small screens */
+}
+
+.articles-table th,
+.articles-table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--text-color);
+    font-size: 0.95rem;
+}
+
+.articles-table th {
+    font-weight: 600;
+    color: var(--primary-color);
+    background-color: rgba(14, 165, 233, 0.1);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.articles-table tr:hover {
+    background-color: rgba(14, 165, 233, 0.05);
+    transition: background-color 0.3s ease;
+}
+
+.articles-table tr:last-child td {
+    border-bottom: none; /* Remove border from last row */
+}
+
+/* History list styling */
+.history-list {
+    margin-top: 20px;
+    color: white;
+    display: grid;
+    gap: 1.5rem;
+    padding: 0.5rem;
+}
+
+
+.history-item {
+    background: var(--surface-color);
+    border-radius: 12px;
+    box-shadow: var(--card-shadow);
+    padding: 1.5rem;
+    color: antiquewhite;
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
+    border: 1px solid var(--border-color);
+}
+
+.title{
+    color: skyblue;
+}
+
+.history-item:last-child {
+    margin-bottom: 0; /* Remove margin from last item */
+}
+
+/* Article Container Styles */
+.article-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.article-content {
+    background: white;
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Add these rules to control image sizes */
+.article-content img {
+    max-width: 100%;
+    height: auto;
+    max-height: 400px; /* Maximum height for images */
+    object-fit: contain;
+    margin: 1rem 0;
+    border-radius: 0.5rem;
+}
+
+.article-image img {
+    width: 100%;
+    height: 200px; /* Fixed height for article thumbnails */
+    object-fit: cover;
+    border-radius: 0.5rem;
+}
+
+/* Adjust theme card images if present */
+.theme-card img {
+    width: 100%;
+    height: 160px; /* Smaller height for theme cards */
+    object-fit: cover;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Rating Section */
+.rating-section {
+    background: white;
+    border-radius: 0.75rem;
+    padding: 1rem;
+    margin: 1rem 0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 1;
+}
+
+.rating-section h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+}
+
+/* Comments Section */
+.comments-section {
+    background: rgb(255, 255, 255);
+    border-radius: 0.75rem;
+    padding: 1rem;
+    margin: 1rem 0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 1;
+}
+
+.comments-section h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+}
+
+.comment-info {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    position: relative; 
+    z-index: 2;
+}
+
+.comment-form textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: 0.5rem;
+    margin-bottom: 0.75rem;
+    font-size: 0.9rem;
+    resize: vertical;
+    min-height: 80px;
+    color: #000000;
+}
+
+.comment {
+    border-bottom: 1px solid var(--border-color);
+    padding: 0.75rem 0;
+    position: relative;
+    
+}
+
+.comment:last-child {
+    border-bottom: none;
+}
+
+.comment-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+    font-size: 0.85rem;
+    z-index: 2;
+    align-items: center;
+    position: relative;
+
+}
+
+.comment-author {
+    font-weight: 600;
+    color: #000000;
+}
+
+.comment-date {
+    color: #666666;
+}
+
+.comment-content {
+    font-size: 0.9rem !important;
+    line-height: 1;
+    color: #090505 !important;
+}
+
+.delete-comment-form {
+    margin: 0;
+    padding: 0;
+    z-index: 3;
+    position: relative;
+}
+
+/* Buttons */
+.save-btn {
+    background: var(--primary-color);
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.save-btn:hover {
+    background: var(--secondary-color);
+}
+
+
+
+.delete-btn {
+    background: none;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 4px;
+    color: #dc2626;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: auto;
+    z-index: 4;
+    position: relative;
+}
+
+
+.delete-btn:hover {
+    background-color: rgba(220, 38, 38, 0.1);
+
+}
+
+.delete-icon {
+    width: 20px;
+    height: 20px;
+    pointer-events: none;
+}
+
+/* Stars Rating - Updated styles */
+.stars-container {
+    margin: 10px 0;
+    position: relative;
+    z-index: 2; /* Ensure stars are above other elements */
+    pointer-events: auto;
+}
+
+.stars {
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+    pointer-events: auto;
+}
+
+.star-rating {
+    font-size: 24px;
+    color: #ddd;
+    transition: color 0.2s;
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+    z-index: 3; 
+    padding: 0 2px;
+    pointer-events: auto;
+}
+
+.star-rating.active {
+    color: #ffd700;
+}
+
+.star-rating:hover {
+    color: #ffed4a;
+}
+
+/* Login Prompt */
+.login-prompt {
+    background: white;
+    border-radius: 0.75rem;
+    padding: 1rem;
+    text-align: center;
+    margin: 1rem 0;
+    font-size: 0.9rem;
+}
+
+.login-prompt a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+/* Header */
+.header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: white;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.header h1 {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.back-link {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.back-link svg {
+    width: 24px;
+    height: 24px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .article-container {
+        padding: 0.75rem;
+    }
+
+    .article-content {
+        padding: 1rem;
+    }
+
+    .header h1 {
+        font-size: 1.25rem;
+    }
+
+    .article-content img {
+        max-height: 300px; /* Smaller max-height on mobile */
+    }
+    
+    .article-image img {
+        height: 160px; /* Smaller height on mobile */
+    }
+    
+    .theme-card img {
+        height: 140px; /* Smaller height on mobile */
+    }
+}

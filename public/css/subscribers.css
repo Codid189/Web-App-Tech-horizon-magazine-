@@ -1,0 +1,251 @@
+/* Root Variables */
+:root {
+    --primary-color: #0ea5e9;
+    --secondary-color: #0284c7;
+    --accent-color: #38bdf8;
+    --background-color: #0f172a;
+    --surface-color: #1e293b;
+    --text-color: #566ea1;
+    --text-light: #b6c4d6;
+    --border-color: rgba(255, 255, 255, 0.1);
+    --error-color: #ef4444;
+    --error-hover: #dc2626;
+    --premium-color: #eab308;
+    --basic-color: #0ea5e9;
+    --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
+    --hover-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+    --gradient-primary: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+    --transition-speed: 0.3s;
+}
+
+/* Subscribers Container */
+.subscribers-container {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    background: var(--surface-color);
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--card-shadow);
+    transition: all var(--transition-speed) ease;
+}
+
+/* Header Actions */
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+/* Search Box */
+.search-box {
+    position: relative;
+    flex: 1;
+    max-width: 400px;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 0.875rem 1rem 0.875rem 2.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1rem;
+    color: var(--text-light);
+    background: var(--background-color);
+    transition: all var(--transition-speed) ease;
+}
+
+.search-box input:hover {
+    border-color: var(--accent-color);
+}
+
+.search-box input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.1);
+}
+
+.search-icon {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    color: var(--text-light);
+    pointer-events: none;
+    transition: color var(--transition-speed) ease;
+}
+
+.search-box input:focus + .search-icon {
+    color: var(--primary-color);
+}
+
+/* Subscribers Grid */
+.subscribers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+/* Subscriber Card */
+.subscriber-card {
+    background: var(--surface-color);
+    border-radius: 12px;
+    padding: 1.75rem;
+    box-shadow: var(--card-shadow);
+    border: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    cursor: pointer;
+    transition: all var(--transition-speed) ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.subscriber-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--gradient-primary);
+    opacity: 0;
+    transition: opacity var(--transition-speed) ease;
+    z-index: 0;
+}
+
+.subscriber-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--hover-shadow);
+}
+
+.subscriber-card:hover::before {
+    opacity: 0.05;
+}
+
+.subscriber-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--primary-color);
+    transition: all var(--transition-speed) ease;
+    position: relative;
+}
+
+.subscriber-card:hover .subscriber-avatar {
+    transform: scale(1.05);
+    border-color: var(--accent-color);
+    box-shadow: 0 0 20px rgba(14, 165, 233, 0.2);
+}
+
+.subscriber-info {
+    flex: 1;
+    position: relative;
+}
+
+.subscriber-info h3 {
+    margin: 0 0 0.5rem 0;
+    color: var(--text-light);
+    font-size: 1.25rem;
+    transition: color var(--transition-speed) ease;
+}
+
+.subscriber-card:hover .subscriber-info h3 {
+    color: var(--primary-color);
+}
+
+.subscriber-info p {
+    margin: 0.25rem 0;
+    color: var(--text-color);
+    font-size: 0.95rem;
+}
+
+/* Subscription Type Badge */
+.subscription-type {
+    display: inline-block;
+    padding: 0.375rem 1rem;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.875rem;
+    margin: 0.5rem 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all var(--transition-speed) ease;
+}
+
+.subscription-type.premium {
+    background: rgba(234, 179, 8, 0.1);
+    color: var(--premium-color);
+}
+
+.subscription-type.basic {
+    background: rgba(14, 165, 233, 0.1);
+    color: var(--basic-color);
+}
+
+/* Delete Button */
+.delete-subscriber-btn {
+    background: var(--error-color);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.25rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: all var(--transition-speed) ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.delete-subscriber-btn::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.1);
+    opacity: 0;
+    transition: opacity var(--transition-speed) ease;
+}
+
+.delete-subscriber-btn:hover {
+    background: var(--error-hover);
+    transform: translateY(-2px);
+    box-shadow: var(--hover-shadow);
+}
+
+.delete-subscriber-btn:hover::before {
+    opacity: 1;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .subscribers-container {
+        padding: 1.5rem;
+    }
+
+    .header-actions {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1rem;
+    }
+
+    .search-box {
+        max-width: 100%;
+    }
+
+    .subscribers-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .subscriber-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 1.5rem;
+    }
+
+    .subscriber-avatar {
+        margin-bottom: 1rem;
+    }
+}
